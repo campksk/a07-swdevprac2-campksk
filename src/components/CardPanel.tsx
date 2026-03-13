@@ -23,22 +23,23 @@ export default function CardPanel() {
         ['The Grand Table', 0]
     ]));
 
-    const venues = [
-        { name: 'The Bloom Pavilion', image: '/img/bloom.jpg' },
-        { name: 'Spark Space', image: '/img/sparkspace.jpg' },
-        { name: 'The Grand Table', image: '/img/grandtable.jpg' }
+    const mockVenueRepo = [
+        { vid: "001", name: 'The Bloom Pavilion', image: '/img/bloom.jpg' },
+        { vid: "002", name: 'Spark Space', image: '/img/sparkspace.jpg' },
+        { vid: "003", name: 'The Grand Table', image: '/img/grandtable.jpg' }
     ];
 
     return (
         <div>
             <div style={{ margin: "20px", display: "flex", flexDirection: "row", justifyContent: "space-around", flexWrap: "wrap", gap: "20px" }}>
-                {venues.map((venue) => (
-                    <Card 
-                        key={venue.name} 
-                        venueName={venue.name} 
-                        imgSrc={venue.image}
-                        onRatingChange={(name: string, value: number) => dispatchRating({ type: 'add', venueName: name, rating: value })}
-                    />
+                {mockVenueRepo.map((venue) => (
+                    <Link href={`/venue/${venue.vid}`} className="w-1/5 min-w-[250px]" key={venue.vid}>
+                        <Card 
+                            venueName={venue.name} 
+                            imgSrc={venue.image}
+                            onRatingChange={(name: string, value: number) => dispatchRating({ type: 'add', venueName: name, rating: value })}
+                        />
+                    </Link>
                 ))}
             </div>
 
