@@ -1,0 +1,41 @@
+.card {
+  width: 250px;
+  height: 300px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.cardimg {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.cardtext {
+  margin-left: 10px;
+}
+
+/* --- ส่วนที่ย้ายมาจาก Inline Style --- */
+.image {
+  border-radius: 10px;
+  padding: 5px;
+  object-fit: cover; /* ย้าย objectFit='cover' จาก Image component มาไว้ที่นี่ */
+}
+
+.title {
+  color: #4f86ff;
+  padding-top: 5px;
+}
+
+.description {
+  color: #000000;
+  padding-top: 5px;
+}
+
+.content {
+  padding-left: 10px;
+  padding-right: 10px;
+}
